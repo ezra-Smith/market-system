@@ -1,7 +1,6 @@
-# Market System 文档中心
-
-欢迎来到 Market System 文档中心！这里包含了行情系统的完整文档。
-适合新兴交易所和新手熟悉业务！同时支持内部交易数据和外部数据源融合。
+# Market System 文档
+Market System ！
+适合新兴交易所和新手熟悉行情系统业务！同时支持内部交易数据和外部数据源融合。
 
 - 当前版本：v1.0
 - 最后更新：2025-11-11
@@ -19,3 +18,33 @@
 - RESTful API
 - Docker 部署
 
+market-system/
+    common/                 # 公共库
+        config/             # 配置结构
+        models/             # 数据模型
+        utils/              # 工具函数
+        constants/          # 常量定义
+    configs/                # 配置文件
+    deploy/                 # 部署文件
+    services/
+        collector/          # 采集服务
+          cmd/              # 入口
+          internal/         # 内部实现
+             adapters/      # 交易所适配器
+             publisher/     # Kafka 发布者
+         processor/         # 处理服务
+           cmd/
+           internal/
+             consumer/      # Kafka 消费者
+             handler/       # 数据处理
+             storage/       # 存储层
+        api/                # API 服务
+           cmd/
+            internal/
+               config/      # 配置结构          
+               handler/     # HTTP Handler
+               logic/       # 业务逻辑
+               svc/         # 服务上下文
+               types/       # 业务类型
+               websocket/   # WebSocket推送
+   
